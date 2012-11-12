@@ -1,6 +1,6 @@
 # Pivotal
 
-TODO: Write a gem description
+Pivotal Tracker API Client
 
 ## Installation
 
@@ -22,7 +22,16 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Token is either in ~/.pivotal or passed in as {token: "token"} to Pivotal::Client#new
+
+```
+client = Pivotal::Client.new(token: "token")
+# => #<Pivotal::Client::Real:0x007f8313a1f598
+project = client.projects.get(635517)
+#  => <Pivotal::Client::Project
+current_iteration = project.iterations.current
+# =>  <Pivotal::Client::Iteration
+```
 
 ## Contributing
 

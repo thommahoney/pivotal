@@ -7,4 +7,7 @@ class Pivotal::Client::Project < Cistern::Model
   attribute :current_velocity, type: :integer
   attribute :memberships
 
+  def iterations
+    connection.iterations.tap{|i| i.project_id = self.identity}
+  end
 end

@@ -7,9 +7,15 @@ class Pivotal::Client < Cistern::Service
 
   model :project
   collection :projects
-  #request :create_project
-  #request :get_project
-  #request :get_projects
+  request :get_project
+  request :get_projects
+
+  model :iteration
+  collection :iterations
+  request :get_iteration
+  request :get_iterations
+
+  model :story
 
   recognizes :token, :url
 

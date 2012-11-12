@@ -16,6 +16,10 @@ Or install it yourself as:
 
     $ gem install pivotal
 
+## Releasing
+
+    gem bump -trv patch
+
 ## Usage
 
 TODO: Write usage instructions here

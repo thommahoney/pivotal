@@ -17,7 +17,7 @@ class Pivotal::Client < Cistern::Service
 
   model :story
 
-  recognizes :token, :url
+  recognizes :token, :url, :logger, :adapter, :connection_options
 
   class Real
 
@@ -27,7 +27,7 @@ class Pivotal::Client < Cistern::Service
 
       raise "Missing token" unless @token
 
-      @logger            = options[:logger] || Logger.new(STDOUT)
+      @logger            = options[:logger] || Logger.new(nil)
       adapter            = options[:adapter] || Faraday.default_adapter
       connection_options = options[:connection_options] || {ssl: {verify: false}}
 

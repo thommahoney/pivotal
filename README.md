@@ -18,7 +18,8 @@ Or install it yourself as:
 
 ## Releasing
 
-    gem bump -trv patch
+    $ gem install gem-release
+    $ gem bump -trv (patch|minor|major)
 
 ## Usage
 

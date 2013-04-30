@@ -6,7 +6,7 @@ class Pivotal::Client::Iterations < Cistern::Collection
   def all(params={})
     response = connection.get_iterations(params.merge("project_id" => self.project_id))
 
-    self.clone.load(response.body["iterations"])
+    self.clone.load(response.body["iterations"] || [])
   end
 
   def current

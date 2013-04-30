@@ -27,7 +27,7 @@ class Pivotal::Client < Cistern::Service
 
       raise "Missing token" unless @token
 
-      @logger            = options[:logger] || Logger.new(nil)
+      @logger            = options[:logger] || (ENV["VERBOSE"] == "1" && Logger.new(STDOUT)) || Logger.new(nil)
       adapter            = options[:adapter] || Faraday.default_adapter
       connection_options = options[:connection_options] || {ssl: {verify: false}}
 

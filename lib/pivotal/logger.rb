@@ -23,7 +23,7 @@ class Pivotal::Logger < Faraday::Response::Middleware
   def on_complete(env)
     info('Status') { env[:status].to_s }
     debug('response') { dump_headers env[:response_headers] }
-    #debug('response.body') { env[:body] }
+    debug('response.body') { env[:body] }
   end
 
   private

@@ -5,7 +5,7 @@ class Pivotal::Client::Story < Cistern::Model
   attribute :created_at,   type: :date
   attribute :current_state
   attribute :description
-  attribute :labels
+  attribute :labels, parser: lambda { |v,opts| (v || "").split(",") }
   attribute :name
   attribute :owned_by
   attribute :project_id,   type: :integer

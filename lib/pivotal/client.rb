@@ -22,7 +22,7 @@ class Pivotal::Client < Cistern::Service
   class Real
 
     def initialize(options={})
-      @token = options[:token] || File.read(File.expand_path("~/.pivotal"))
+      @token = options[:token] || File.read(File.expand_path("~/.pivotal")).strip
       @url   = options[:url]   || "https://www.pivotaltracker.com/services/v3/"
 
       raise "Missing token" unless @token

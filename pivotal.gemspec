@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "cistern", "~> 0.2.3"
   gem.add_dependency "xml-simple"
-  gem.add_dependency "faraday"
+  gem.add_dependency "faraday", "~> 0.8.6"
   gem.add_dependency "faraday_middleware"
   gem.add_dependency "multi_xml"
 end
